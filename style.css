@@ -1,0 +1,29 @@
+
+body {
+  background-color: rgba(20, 100, 220,.8)
+}
+
+
+#colors{
+display: flex;
+flex-wrap: wrap;
+justify-content: space-around;
+}
+
+
+.wrapperdiv{
+display: flex;
+flex-flow: row wrap;
+justify-content: space-around;
+/* background-color:beige; */
+margin: 2px;
+padding: 2px;
+border: 1px solid black;
+
+}
+
+.randomstring{
+  margin: auto;
+  width: fit-content;
+  /* font-size: x-small; */
+}
