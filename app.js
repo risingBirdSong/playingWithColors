@@ -128,10 +128,13 @@ const convertToHtml = (contentAndColor) => {
   newP.textContent = contentAndColor[0];
   newP.style = `color : ${contentAndColor[1]}`
   newP.style = `background-color : ${contentAndColor[2]}`;
+  let lengthProp = contentAndColor[0].length;
+  console.log(lengthProp);
+  newP.style.padding = lengthProp;
   // newP.style = `fontSize : ${contentAndColor[0].length}`
-  let fontsize = (contentAndColor[0].length * 1.2) + 5;
-  newP.style.fontSize = `${fontsize}px`;
-  console.log(newP);
+  // let fontsize = (contentAndColor[0].length * 1.2) + 5;
+  // newP.style.fontSize = `${fontsize}px`;
+  // wrapperDiv.style.
   newP.classList.add("randomstring")
   return wrapperDiv;
 }
