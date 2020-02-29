@@ -1,3 +1,4 @@
+
 const purples =
   `lavender	#E6E6FA	rgb(230,230,250)
 thistle	#D8BFD8	rgb(216,191,216)
@@ -57,7 +58,20 @@ let spectrum = `15 	#ff4000	rgb(255, 64, 0)	hsl(15, 100%, 50%)
 // let splitting = purpleString.split("\n").map(line => line.split("\t"));
 // let purples = splitting.map(val => val[1]);
 
-console.log(chroma('pink').darken().saturate(2).hex());
+
+function shuffle(a) {
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+
+console.log(shuffle([1, 2, 3]))
+console.log(shuffle([1, 2, 3]))
+console.log(shuffle([1, 2, 3]))
+
 
 function componentToHex(c) {
   var hex = c.toString(16);
@@ -77,7 +91,7 @@ const extractColors = (rawColorText) => {
 
 }
 
-let colorSpectrum = extractColors(purples);
+let colorSpectrum = extractColors(reds);
 // console.log(extractColors(reds))
 
 function generateString() {
@@ -116,21 +130,36 @@ const addColorsToStrs = (randomStrings) => {
   return randomStrings.map(str => colorAccordingToLength(str));
 }
 
-let colors = addColorsToStrs(massProduceStrings(1600));
+let colors = addColorsToStrs(massProduceStrings(130));
 
 const colorsDiv = document.getElementById("colors");
+
+
+const randomBetweenRanges = (low, high) => {
+  return Math.floor(Math.random() * (high - low) + low)
+}
+
+const callRandomAsString = (...args) => {
+  let randomize = [...args];
+  return shuffle(randomize);
+  // console.log(randomize);
+  // return func()
+}
 
 const convertToHtml = (contentAndColor) => {
   let wrapperDiv = document.createElement("div");
   wrapperDiv.classList.add("wrapperdiv")
   let newP = document.createElement("p");
   wrapperDiv.appendChild(newP);
-  newP.textContent = contentAndColor[0];
-  newP.style = `color : ${contentAndColor[1]}`
-  newP.style = `background-color : ${contentAndColor[2]}`;
   let lengthProp = contentAndColor[0].length;
-  console.log(lengthProp);
-  newP.style.padding = lengthProp;
+  newP.textContent = contentAndColor[0];
+  wrapperDiv.style = `margin : ${lengthProp * 1.3 + 2}px; padding : ${lengthProp * 2 - 3} px`;
+  let shuffled = callRandomAsString(["black", contentAndColor[1], contentAndColor[1]]);
+  newP.style = `padding : ${lengthProp * 1.3}px; margin : ${lengthProp * .8}px; color : ${contentAndColor[1]};   
+  background: linear-gradient(${randomBetweenRanges(40, 60)}deg, ${shuffled});
+  `;
+  // newP.style = `color : ${contentAndColor[1]}`
+  // newP.style = `background-color : ${contentAndColor[2]}`;
   // newP.style = `fontSize : ${contentAndColor[0].length}`
   // let fontsize = (contentAndColor[0].length * 1.2) + 5;
   // newP.style.fontSize = `${fontsize}px`;

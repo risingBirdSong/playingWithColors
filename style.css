@@ -1,13 +1,14 @@
 
 body {
-  background-color: rgba(20, 100, 220,.8)
+  background: linear-gradient(35deg,darkmagenta, indianred,pink );
+  color: indianred;
 }
-
 
 #colors{
 display: flex;
 flex-wrap: wrap;
 justify-content: space-around;
+
 }
 
 
@@ -16,17 +17,25 @@ display: flex;
 flex-flow: row wrap;
 justify-content: space-around;
 /* background-color:beige; */
-/* margin: 2px;
-padding: 2px; */
-border: 2px solid black;
-border-radius: 3px;
+
+border: 2px double black;
+border-radius: 5px;
 box-shadow: 3px 3px 3px black;
 
 }
 
 .randomstring{
-  /* margin: auto; */
-  margin: 1px;
-  font-size: x-small;
+  margin: auto;
+  font-size: xx-small;
+  border-radius: 5px;
+  border: 6px inset wheat;
+}
 
+p{
+  /* text-shadow: 1.5px 1.2px red; */
+  /* font-weight: bolder; */
+  /* display: none; */
+  /* font-size: 10px; */
+  color: red;
+  opacity: .8;
 }
