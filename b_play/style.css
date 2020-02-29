@@ -1,0 +1,19 @@
+h1 {
+  color: rebeccapurple;
+}
+
+
+#container {
+  display: flex;
+  background-color: aliceblue;
+  flex-wrap: wrap;
+}
+
+.parallelogram{
+  /* color: aquamarine; */
+  /* width : 100px;
+  height : 50px; */
+  /* transform:  */
+  border-radius: 7px;
+  box-shadow: 15px 10px 10px wheat;
+}
