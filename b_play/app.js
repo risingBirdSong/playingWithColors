@@ -19,7 +19,7 @@ let colorsA = [
 
 
 const globalOptions = {
-  howMany: 200,
+  howMany: 250,
   globalColors: colorsA
 }
 
@@ -38,22 +38,19 @@ function randomInRange(low, high) {
 
 //options {} - low : number, high : number
 
-let myOptions = { low: 20, high: 100, scaledDownRange: 25, scaledDownOffset: 20 }
+let myOptions = { low: 10, high: 100, scaledDownRange: 25, scaledDownOffset: 20 }
 
 function parallelogramMaker(options) {
-  let randomHShape = Math.floor(Math.random() * 6 + 1)
-  let newShape = document.createElement(`h${randomHShape}`);
+  let newShape = document.createElement('h1');
   let randomColor = randomChoseItemFromArr(globalOptions.globalColors);
-  newShape.style.backgroundColor = randomColor;
+  let anotherRandomColor = randomChoseItemFromArr(globalOptions.globalColors);
+  newShape.style.background = `linear-gradient(${randomColor}, ${anotherRandomColor})`;
   let randomNum = randomInRange(options.low, options.high);
   newShape.style.width = `${randomNum}px`;
   newShape.style.height = `${randomNum}px`;
   let scaledDown = Math.round((randomNum / options.high) * options.scaledDownRange) + options.scaledDownOffset;
-  newShape.style.transform = `rotate(${scaledDown}deg)`;
-  let anotherRandomColor = randomChoseItemFromArr(globalOptions.globalColors);
-  let borderRadius = randomInRange(10, 20);
-  newShape.style.border = `${randomInRange(1, 4)}px solid ${anotherRandomColor}`;
-  // newShape.style.borderRadius = `${borderRadius}px`;
+  // newShape.style.border = `${randomInRange(2, 5)}px double ${anotherRandomColor} `;
+  // newShape.style.borderRadius = `${ borderRadius } px`;
   newShape.classList.add("parallelogram");
   return newShape;
 }
