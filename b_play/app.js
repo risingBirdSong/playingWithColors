@@ -44,7 +44,7 @@ function parallelogramMaker(options) {
   let newShape = document.createElement('h1');
   let randomColor = randomChoseItemFromArr(globalOptions.globalColors);
   let anotherRandomColor = randomChoseItemFromArr(globalOptions.globalColors);
-  newShape.style.background = `linear-gradient(${randomColor}, ${anotherRandomColor})`;
+  newShape.style.background = `radial-gradient(${randomColor}, ${anotherRandomColor})`;
   let randomNum = randomInRange(options.low, options.high);
   newShape.style.width = `${randomNum}px`;
   newShape.style.height = `${randomNum}px`;
