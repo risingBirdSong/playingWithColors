@@ -1,0 +1,23 @@
+.body {
+  display: flex;
+  vertical-align: middle;  
+}
+
+.holder{
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 1000px;
+  justify-content: center;
+  /* align-items: center; */
+}
+
+h1 {
+  background-color: rgb(19, 15, 24);
+  width: 200px;
+  height: 200px;
+}
